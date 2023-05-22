@@ -1,12 +1,19 @@
 function clock() {
-  let hours = document.getElementById("hours");
-  let minutes = document.getElementById("minutes");
-  let seconds = document.getElementById("seconds");
-  let period = document.getElementById("period");
+  const hours = document.getElementById("hours");
+  const minutes = document.getElementById("minutes");
+  const seconds = document.getElementById("seconds");
+  const period = document.getElementById("period");
+  const date = document.getElementById("date");
 
   let h = new Date().getHours();
   let m = new Date().getMinutes();
   let s = new Date().getSeconds();
+  let d = new Date().toLocaleDateString("en-us", {
+    weekday: "long",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
 
   let p = h >= 12 ? "PM" : "AM";
 
@@ -22,6 +29,7 @@ function clock() {
   minutes.innerHTML = m;
   seconds.innerHTML = s;
   period.innerHTML = p;
+  date.innerHTML = d;
 }
 
 setInterval(clock, 1000);
