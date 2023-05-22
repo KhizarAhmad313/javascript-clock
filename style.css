@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+.time,
+.left-side,
+.right-side,
+.right-top,
+.right-down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.digital-clock,
+.time,
+.left-side,
+.right-side,
+.right-top,
+.right-down {
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #2e2e45;
+}
+
+.digital-clock {
+  color: #fff;
+  width: 425px;
+  padding: 20px 45px;
+  border-radius: 10px;
+  background: #2d2f38;
+}
+
+.digital-clock::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(45deg, red, green, blue);
+  background-size: 200% 200%;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  filter: blur(30px);
+  animation: glowing 1s ease infinite;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#hours {
+  font-weight: 600;
+  padding: 0 10px;
+  line-height: 125px;
+  font-size: 8em;
+  background: -webkit-linear-gradient(90deg, green, white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.right-side {
+  flex-direction: column;
+}
+
+#dots {
+  font-size: 4em;
+  transform: translateY(-3px);
+  color: gray;
+}
+
+#minutes {
+  font-size: 5em;
+  font-weight: 500;
+  margin-left: 10px;
+  transform: translateY(10px);
+  background: -webkit-linear-gradient(90deg, blue, white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.right-down {
+  margin-left: 10px;
+  transform: translateY(-25px);
+}
+
+#period,
+#seconds {
+  font-size: 1.8em;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+#period {
+  color: orange;
+  background: -webkit-linear-gradient(90deg, red, white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+#seconds {
+  background: -webkit-linear-gradient(90deg, red, white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
